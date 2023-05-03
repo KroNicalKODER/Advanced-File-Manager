@@ -17,7 +17,7 @@ class HistoryStruct{
 
 class History{
     public: 
-        void addRecord(string filename, chrono::system_clock::time_point timestamp, void* pointer, string action);
+        void addRecord(string filename, chrono::system_clock::time_point timestamp, void* frmPointer, void* toPointer, string action);
         vector<HistoryStruct> getRecords() const;
         void undo();
         void redo();

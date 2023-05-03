@@ -1,4 +1,5 @@
 #include "huffman.h"
+#include "Lempel.h"
 
 using namespace std;
 using namespace Huffman;

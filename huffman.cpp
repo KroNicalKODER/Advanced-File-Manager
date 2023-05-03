@@ -36,7 +36,6 @@ namespace Huffman
                 pq.push(new Node(i, frequencies[i]));
             }
         }
-        //Buildiing further
         cout<<pq.size();
         while (pq.size() > 1)
         {
