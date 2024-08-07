@@ -3,21 +3,23 @@
 
 #include<bits/stdc++.h>
 #include<ctime>
-
+#include<chrono>
 using namespace std;
 
 class HistoryStruct{
     public:
         string operation;
         string file;
-        chrono::system_clock::time_point timestamp;
-        void* fromPtr;
-        void* toPtr;
+       // chrono::system_clock::time_point timestamp;
+       int fromPtr;
+       int toPtr;
+        string originalContents;
+        
 };
 
 class History{
     public: 
-        void addRecord(string filename, chrono::system_clock::time_point timestamp, void* frmPointer, void* toPointer, string action);
+        void addRecord(string filename,int frmPointer, int toPointer, string action);
         vector<HistoryStruct> getRecords() const;
         void undo();
         void redo();

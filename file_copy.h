@@ -9,7 +9,7 @@ using namespace std;
 void copy_word(const string& source_file, const string& target_file, const string& word) {
     ifstream source(source_file);
     ofstream target(target_file);
-    string buffer;
+    string buffer="";
     while (source >> buffer) {
         if (buffer == word) {
             target << buffer << " ";
@@ -47,5 +47,20 @@ void copy_file(const string& source_file, const string& target_file) {
     source.close();
     target.close();
 }
+void copy_pointer(const char* source_filename, const char* dest_filename, int start_pos, int end_pos) {
+    std::ifstream source_file(source_filename);
+    std::ofstream dest_file(dest_filename);
+
+    source_file.seekg(start_pos);
+    char* buffer = new char[end_pos - start_pos + 1];
+    source_file.read(buffer, end_pos - start_pos + 1);
+    buffer[end_pos - start_pos] = '\0';
+    dest_file << buffer;
+
+    delete[] buffer;
+    source_file.close();
+    dest_file.close();
+}
+
 
 #endif

@@ -169,21 +169,4 @@ namespace Huffman
         return file.tellg();
     }
 
-}
-
-using namespace Huffman;
-
-
-
-int main()
-{
-    string inputFile = "test.txt";
-    string compressedFile = "compressed.dat";
-    compress(inputFile, compressedFile);
-    string decompressedFile = "decompressed.txt";
-    decompress(compressedFile, decompressedFile);
-
-    cout<<endl<<fileSize(decompressedFile) - fileSize(compressedFile)<<endl;    
-
-    return 0;
-}
+};
